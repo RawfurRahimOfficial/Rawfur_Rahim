@@ -69,7 +69,7 @@ function DeskTopManu() {
   }, "UpDown")
   tl.to(".navDiv .nav_manu #Desktop_Button", {
     y: 20,
-    duration: 0.3,
+    duration: 0.1,
     opacity: 0
   }, "UpDown")
 
@@ -98,30 +98,35 @@ function DropDownAnimaton() {
   tl2.to(".Dropdown_nav", {
     top: 0,
     duration: 0.4,
-    opacity: 1
+    opacity: 1,
+    ease: "power3.out"
   })
   tl2.from(" .Dropdown_Head a, .Dropdown_Head #Responsive_crose", {
     y: -30,
     opacity: 0,
-    duration: 0.2
+    duration: 0.2,
+    ease: "power3.out"
   })
   tl2.to(".Dropdown_nav .Dropdown_ul li a", {
     top: 0,
     opacity: 1,
     duration: 0.2,
-    stagger: 0.1
+    stagger: 0.1,
+    ease: "power3.out"
   })
   tl2.to(".Dropdown_nav .Dropdown_Top_Social a", {
     top: 0,
     opacity: 1,
     duration: 0.2,
-    stagger: 0.1
+    stagger: 0.1,
+    ease: "power3.out"
   })
 
   tl2.from(" .Dropdown_nav .Dro_Footer_bottom", {
     y: 30,
     opacity: 0,
-    duration: 0.2
+    duration: 0.2,
+    ease: "power3.out"
   })
 
 
@@ -141,4 +146,5 @@ function DropDownAnimaton() {
 
 DeskTopManu()
 DropDownAnimaton()
+
 

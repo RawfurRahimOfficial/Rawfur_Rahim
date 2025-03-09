@@ -21,6 +21,48 @@ body {
 }
 
 
+  
+  .BorderBottomAnimation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.671); /* বর্ডার কালার */
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0); /* ডিফল্ট অবস্থায় হাইড */
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .BorderBottomAnimation:hover::after {
+    transform: scaleX(1); /* হোভার করলে বর্ডার আসবে */
+    transform-origin: left;
+  }
+
+
+
+  .BlackBorderBottomAnimation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.671); /* বর্ডার কালার */
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0); /* ডিফল্ট অবস্থায় হাইড */
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .BlackBorderBottomAnimation:hover::after {
+    transform: scaleX(1); /* হোভার করলে বর্ডার আসবে */
+    transform-origin: left;
+  }
+
+  
+  
+
 main {
     width: 100%;
     background-color: black;
@@ -68,7 +110,7 @@ nav .nav_manu {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    height: 22px;
+    height: 30px;
     width: 400px;
     position: relative;
     overflow: hidden;
@@ -81,10 +123,14 @@ nav .nav_manu .nav_manu_ul {
     gap: 45px;
     width: 400px;
     opacity: 0;
+    
 }
 
 nav .nav_manu .nav_manu_ul li {
     list-style: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
 }
 
 nav .nav_manu .nav_manu_ul li a {
@@ -110,6 +156,8 @@ nav .nav_manu .button {
     cursor: pointer;
     position: absolute;
     bottom: 0;
+    padding-bottom: 2px;
+    height: max-content;
 }
 
 nav .nav_manu .button svg {
@@ -272,6 +320,8 @@ nav .nav_manu .button svg {
         text-transform: uppercase;
         position: relative;
         top: -40px;
+        display: inline-block;
+        padding-bottom: 2px;
     }
 
     .Dropdown_nav .Dro_Footer_bottom{
@@ -313,7 +363,7 @@ nav .nav_manu .button svg {
         display: inline-block;
         width: 100%;
         height: 100dvh;
-        top: 0;
+        top: -740px;
         left: 0;
         position: absolute;
         background-color: #A3A3A3;
@@ -337,6 +387,10 @@ nav .nav_manu .button svg {
         color: black;
         font-size: 4.8vw;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .Dropdown_nav .Dropdown_Head #Responsive_crose {
@@ -358,6 +412,8 @@ nav .nav_manu .button svg {
         text-align: center;
         margin-top: 100px;
         gap: 20px;
+        position: relative;
+        top: -70px;
     }
 
     .hero nav .Dropdown_nav .Dropdown_ul li {
@@ -400,7 +456,10 @@ nav .nav_manu .button svg {
         font-size: 4vw;
         font-weight: 500;
         text-transform: uppercase;
+        position: relative;
+        top: -40px;
     }
+    
 
     .Dropdown_nav .Dro_Footer_bottom{
         width: 100%;
