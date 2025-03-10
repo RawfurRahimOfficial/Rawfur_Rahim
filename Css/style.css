@@ -28,19 +28,17 @@ body {
     width: 100%;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.671);
-    /* বর্ডার কালার */
     left: 0;
     bottom: 0;
     transform: scaleX(0);
-    /* ডিফল্ট অবস্থায় হাইড */
     transform-origin: right;
     transition: transform 0.3s ease-out;
 }
 
 .BorderBottomAnimation:hover::after {
     transform: scaleX(1);
-    /* হোভার করলে বর্ডার আসবে */
     transform-origin: left;
+    
 }
 
 
@@ -51,18 +49,15 @@ body {
     width: 100%;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.671);
-    /* বর্ডার কালার */
     left: 0;
     bottom: 0;
     transform: scaleX(0);
-    /* ডিফল্ট অবস্থায় হাইড */
     transform-origin: right;
     transition: transform 0.3s ease-out;
 }
 
 .BlackBorderBottomAnimation:hover::after {
     transform: scaleX(1);
-    /* হোভার করলে বর্ডার আসবে */
     transform-origin: left;
 }
 
@@ -107,9 +102,21 @@ main {
     text-decoration: none;
     color: white;
     font-size: 18px;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    pointer-events: auto;
 }
 
-
+.hero nav .LogoContainer{
+    position: relative;
+    width:fit-content;
+    height: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 nav .nav_manu {
     display: flex;
@@ -211,6 +218,10 @@ nav .nav_manu .button svg {
 
 .HedingText .HT_bottom {
     margin-left: 1vw;
+    overflow: hidden;
+}
+.HedingText .HT_top{
+    overflow: hidden;
 }
 
 .HedingText .HT_bottom P {
@@ -225,6 +236,7 @@ nav .nav_manu .button svg {
     width: 100%;
     text-align: right;
     margin-top: 100px;
+    overflow: hidden;
 }
 
 .FullTime h5 {
@@ -242,7 +254,7 @@ nav .nav_manu .button svg {
     width: 100%;
     height: 60px;
     position: absolute;
-    bottom: 20px;
+    bottom: 2%;
     font-family: Heading;
 }
 
@@ -258,7 +270,7 @@ nav .nav_manu .button svg {
     list-style: none;
     position: relative;
     display: inline-block;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     width: max-content;
 
 }
@@ -275,32 +287,33 @@ nav .nav_manu .button svg {
     gap: 5px;
 }
 
+
 .HeroBottom ul li a .upwork {
-    width: 40px;
+    width: 3vw;
+    height: 3vw;
     margin-right: 3px;
-    height: 40px;
-    border-radius: 50%;
+    opacity: 0.8;
 }
 
 .HeroBottom ul li a .fiver {
-    width: 45px;
+    width: 3.2vw;
+    height: 3.2vw;
     margin-right: 3px;
-    height: 45px;
-    border-radius: 50%;
+    opacity: 0.8;
 }
 
 .HeroBottom ul li a .freelancer {
-    width: 35px;
+    width: 2.5vw;
+    height: 2.5vw;
     margin-right: 3px;
-    height: 35px;
-    border-radius: 50%;
+    opacity: 0.8;
 }
 
 
 .HeroBottom ul li a i {
     width: inherit;
     height: inherit;
-    font-size: 17px;
+    font-size: 1.2vw;
     /* margin-left: 7px; */
     transform: rotate(-25deg);
     transition: all ease-in 0.2s;
@@ -347,10 +360,10 @@ nav .nav_manu .button svg {
 
 
     .hero nav .Dropdown_nav {
-        display: inline-block;
+        display: block;
         width: 100%;
         height: 100dvh;
-        top: -740px;
+        top: -888px;
         left: 0;
         position: absolute;
         background-color: #A3A3A3;
@@ -358,6 +371,7 @@ nav .nav_manu .button svg {
         padding: 0% 3%;
         font-family: Heading;
         opacity: 1;
+        z-index: 10;
     }
 
 
@@ -461,6 +475,82 @@ nav .nav_manu .button svg {
 
 
 
+    
+
+.HedingText {
+    margin-top: 60px;
+}
+
+.HedingText h1 {
+    font-size: 15vw;
+}
+
+.HedingText .HT_bottom {
+    margin-left: 1vw;
+}
+
+.HedingText .HT_bottom P {
+    margin-top: 5px;
+    font-size: 2.1vw;
+}
+
+
+.FullTime {
+    width: 100%;
+    margin-top: 130px;
+}
+
+.FullTime h5 {
+    font-size: 2.2vw;
+    line-height: 25px;
+    word-spacing: 1px;
+}
+
+
+
+
+.HeroBottom {
+    width: 100%;
+    height: 60px;
+}
+
+
+.HeroBottom ul li {
+    padding-bottom: 4px;
+}
+
+.HeroBottom ul li a {
+    font-size: 2.1vw;
+    gap: 5px;
+}
+
+
+.HeroBottom ul li a .upwork {
+    width: 5vw;
+    height: 5vw;
+    margin-right: 3px;
+}
+
+.HeroBottom ul li a .fiver {
+    width: 5.5vw;
+    height: 5.5vw;
+    margin-right: 3px;
+}
+
+.HeroBottom ul li a .freelancer {
+    width: 4.5vw;
+    height: 4.5vw;
+    margin-right: 3px;
+}
+
+
+.HeroBottom ul li a i {
+    font-size: 2.2vw;
+}
+
+
+
+
 
 
 
@@ -488,10 +578,12 @@ nav .nav_manu .button svg {
     .hero nav .Dropdown_nav {
         width: 100%;
         height: 100dvh;
-        top: -740px;
+        top: -888px;
         left: 0;
         padding: 0% 3%;
         font-family: Heading;
+        z-index: 10;
+        display: block;
     }
 
 
@@ -553,4 +645,82 @@ nav .nav_manu .button svg {
         margin-top: 24px;
         font-size: 4vw;
     }
+
+
+
+
+
+
+    
+.HedingText {
+    margin-top: 60px;
+}
+
+.HedingText h1 {
+    font-size: 18vw;
+}
+
+.HedingText .HT_bottom {
+    margin-left: 1vw;
+}
+
+.HedingText .HT_bottom P {
+    margin-top: 5px;
+    font-size: 3.1vw;
+}
+
+
+.FullTime {
+    width: 100%;
+    margin-top: 170px;
+}
+
+.FullTime h5 {
+    font-size: 2.7vw;
+    line-height: 25px;
+    word-spacing: 1px;
+}
+
+
+
+
+.HeroBottom {
+    width: 100%;
+    height: 60px;
+}
+
+
+.HeroBottom ul li {
+    padding-bottom: 4px;
+}
+
+.HeroBottom ul li a {
+    font-size: 3.1vw;
+    gap: 3px;
+}
+
+
+.HeroBottom ul li a .upwork {
+    width: 7vw;
+    height: 7vw;
+    margin-right: 0px;
+}
+
+.HeroBottom ul li a .fiver {
+    width: 8.2vw;
+    height: 8.2vw;
+    margin-right: 0px;
+}
+
+.HeroBottom ul li a .freelancer {
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-right: 0px;
+}
+
+
+.HeroBottom ul li a i {
+    font-size: 3vw;
+}
+
 }

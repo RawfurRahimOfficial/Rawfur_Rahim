@@ -130,21 +130,62 @@ function DropDownAnimaton() {
   })
 
 
-  tl2.pause()
+  tl2.pause();
 
   ResponsiveButton.addEventListener("click", function () {
-    tl2.play()
+    tl2.play();
 
   })
   DropDownNav.addEventListener("click", function () {
-    tl2.reverse()
+    tl2.reverse();
 
   })
 
 
 }
 
+function HeroAnimation(){
+
+
+  var tl3 = gsap.timeline()
+
+
+tl3.from(".hero nav .LogoContainer a, .hero .nav_manu button",{
+  y:100,
+  duration:0.8,
+})
+
+
+tl3.from(".hero .HedingText .HT_top h1",{
+  y:200,
+  duration:0.8,
+},"same")
+tl3.from(".hero .HedingText .HT_bottom h1, .hero .HedingText .HT_bottom p",{
+  y:200,
+  duration:0.8,
+},"same")
+
+
+tl3.from(".hero .FullTime h5",{
+  y:-100,
+  duration:0.8
+},"heroBottom")
+
+tl3.from(".hero .HeroBottom ul li",{
+  opacity:0,
+  duration:0.8,
+  stagger:0.1
+}, "heroBottom+=0.5")
+}
+
 DeskTopManu()
 DropDownAnimaton()
+HeroAnimation()
+
+
+
+
+
+
 
 
