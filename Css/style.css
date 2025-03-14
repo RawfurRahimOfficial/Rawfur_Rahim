@@ -9,6 +9,13 @@ html,
 body {
     width: 100%;
     height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+::selection{
+    color: black;
+    background-color: white;
 }
 
 @font-face {
@@ -65,14 +72,15 @@ body {
     height: 10px;
     position: fixed;
     background-color: #ffffff;
-    z-index: 1000;
+    z-index: 12;
     border-radius: 50%;
     mix-blend-mode: difference;
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* Smooth movement */
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     pointer-events: none;
     opacity: 0;
-    
 }
+
+
 
 
 
@@ -211,7 +219,7 @@ nav .nav_manu .button svg {
     width: fit-content;
     padding-top: 30px;
     font-weight: 400;
-    /* height: calc((100vh - 12vh) - 43vh); */);
+    /* height: calc((100vh - 12vh) - 43vh); */;
     height: 53%;
 }
 
@@ -248,7 +256,7 @@ nav .nav_manu .button svg {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    /* height: calc((100vh - 50vh) - 25vh); */);
+    /* height: calc((100vh - 50vh) - 25vh); */;
     height: 25%;
 }
 
@@ -344,40 +352,93 @@ nav .nav_manu .button svg {
 
 .work{
     width: 100%;
-    height: 100vh;
+    height: min-content;
     font-family: Heading;
     color: white;
     position: relative;
 }
 .workContainer{
     width: 100%;
-    padding-top: 200px;
+    padding-top: 150px;
     position: relative;
 }
 
 .elem{
     width: 94%;
-    padding: 3.5vw 0vw;
+    padding: 3.2vw 0vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     border-top: 1px solid rgba(255, 255, 255, 0.479);
-    
 }
-
+.workContainer #lastElem{
+    border-bottom:1px solid rgba(255, 255, 255, 0.479) ;
+}
 .elem h1{
-    font-size: 7.5vw;
+    font-size: 7.2vw;
     opacity: 0.7;
+    font-weight: 500;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    text-transform: uppercase;
 }
 .elem h5{
     display: flex;
     justify-content: flex-end;
 }
 
-.elem img{
+.elem .imgBox{
+    opacity: 0;
+    width: 500px;
+    height: 330px;
+    z-index: 999;
     position: absolute;
+    transform: translate(-60%, -50%);
+    pointer-events: none;
 }
+
+.elem .imgBox img{
+    border-radius: 8px;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+}
+
+
+.allWorkButton {
+    padding-bottom: 3.25rem;
+    padding-top: 3.25rem;
+   
+}
+.allWorkButton a{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    border: 1px solid white;
+    border-radius: 100px;
+    padding: 5px 15px;
+    font-size: 15px;
+    transition: all linear 0.3s;
+}
+.allWorkButton a sup{
+    font-size: 10px;
+}
+.allWorkButton a:hover{
+    color: black;
+    background-color: white;
+}
+
+
+
+
+.bal{
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+
+
 
 
 
@@ -576,7 +637,66 @@ nav .nav_manu .button svg {
     .HeroBottom ul li a i {
         font-size: 2.2vw;
     }
+
+
+
+
+
+
+    
+.workContainer{
+    padding-top: 80px;
 }
+
+.elem{
+    width: 94%;
+    padding: 5.2vw 0vw;
+}
+
+.elem h1{
+    font-size: 8.2vw;
+}
+
+
+.elem .imgBox{
+    width: 320px;
+    height: 200px;
+    transform: translate(-58%, -50%);
+}
+
+
+
+.allWorkButton {
+    padding-bottom: 3.25rem;
+    padding-top: 3.25rem;
+}
+.allWorkButton a{
+    padding: 5px 15px;
+    font-size: 14px;
+}
+.allWorkButton a sup{
+    font-size: 9px;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 400px) {
     .hero nav .nav_manu #Responsive_Button {
@@ -718,4 +838,44 @@ nav .nav_manu .button svg {
     .HeroBottom ul li a i {
         font-size: 3vw;
     }
+
+
+
+
+
+        
+.workContainer{
+    padding-top: 65px;
+}
+
+.elem{
+    width: 94%;
+    padding: 7.2vw 0vw;
+}
+
+.elem h1{
+    font-size: 9.2vw;
+}
+
+
+.elem .imgBox{
+    width: 250px;
+    height: 150px;
+    transform: translate(-58%, -50%);
+}
+
+
+
+.allWorkButton {
+    padding-bottom: 3.25rem;
+    padding-top: 3.25rem;
+}
+.allWorkButton a{
+    padding: 5px 15px;
+    font-size: 11px;
+}
+.allWorkButton a sup{
+    font-size: 8px;
+}
+
 }

@@ -235,9 +235,63 @@ function HeroAnimation() {
   );
 }
 
+//Elem Section Mouse Move Animation
+
+function ElemSection(){
+  document.querySelectorAll(".elem").forEach(function(elem){
+    var rotate = 0;
+    var deffrot = 0;
+  
+    elem.addEventListener("mousemove", function(dets){
+      var deff = dets.clientY - elem.getBoundingClientRect().top;
+  
+      deffrot = dets.clientX - rotate;
+      rotate = dets.clientX;
+  
+      gsap.to(elem.querySelector(".imgBox"), {
+        opacity: 1,
+        ease: Power3,
+        top: deff,
+        left: dets.clientX,
+        rotate: gsap.utils.clamp(-20, 20, deffrot * 0.5)
+      });
+    });
+  
+    elem.addEventListener("mouseleave", function(){
+      gsap.to(elem.querySelector(".imgBox"), {
+        opacity: 0,
+        ease: Power3, 
+        rotate: gsap.utils.clamp(0, 0, deffrot * 0.5)
+      });
+    });
+  
+    // Mouseenter ইভেন্ট: h1 সরবে
+    elem.addEventListener("mouseenter", function(){
+      gsap.to(elem.querySelector("h1"), {
+        marginLeft: "30px",
+        duration: 0.2,
+        opacity: 0.2,
+  
+          });
+    });
+  
+    // Mouseleave ইভেন্ট: h1 আগের অবস্থানে ফিরে যাবে
+    elem.addEventListener("mouseleave", function(){
+      gsap.to(elem.querySelector("h1"), {
+        marginLeft: "0px",
+        duration: 0.3,
+        opacity: 0.7,
+      });
+    });
+  });
+  
+}
+
+
 DeskTopManu();
 DropDownAnimaton();
 HeroAnimation();
+ElemSection()
 
 
 
@@ -245,7 +299,13 @@ HeroAnimation();
 
 
 
-// Bangadesh Live Time 
+
+
+
+
+
+
+//Bangadesh Live Time 
 function updateBDTime() {
   var now = new Date();
 
@@ -260,7 +320,6 @@ function updateBDTime() {
 
   document.getElementById("bdTime").innerHTML = bdTime + " BD";
 }
-
 setInterval(updateBDTime, 1000);
 updateBDTime();
 
