@@ -1,5 +1,4 @@
-
-// Locomotive Js With ScrollTriger Github code 
+// Locomotive Js With ScrollTriger Github code
 
 function Locomotive() {
   gsap.registerPlugin(ScrollTrigger);
@@ -37,9 +36,7 @@ Locomotive();
 
 
 
-
-
-// Mouse Move And Chapta 
+// Mouse Move And Chapta
 
 function circleChapta() {
   var xscale = 1;
@@ -61,9 +58,9 @@ function circleChapta() {
     Curser(xscale, yscale);
 
     timeout = setTimeout(function () {
-      document.querySelector(
-        ".curser"
-      ).style.transform = `translate(${dets.x - 5}px, ${dets.y - 5}px) scale(1, 1)`;
+      document.querySelector(".curser").style.transform = `translate(${
+        dets.x - 5
+      }px, ${dets.y - 5}px) scale(1, 1)`;
     }, 100);
   });
 }
@@ -73,20 +70,18 @@ function Curser(xscale, yscale) {
   document.addEventListener("mousemove", function (dets) {
     requestAnimationFrame(() => {
       crsr.style.opacity = "1";
-      crsr.style.transform = `translate(${dets.x - 5}px, ${dets.y - 5}px) scale(${xscale}, ${yscale})`;
+      crsr.style.transform = `translate(${dets.x - 5}px, ${
+        dets.y - 5
+      }px) scale(${xscale}, ${yscale})`;
     });
   });
 }
-Curser()
+Curser();
 circleChapta();
 
 
 
-
-
-
-// DeskTop Divice manu click animation 
-
+// DeskTop Divice manu click animation
 function DeskTopManu() {
   var DskButton = document.querySelector(".navDiv .nav_manu #Desktop_Button");
   var DeskUl = document.querySelectorAll(".navDiv .nav_manu .nav_manu_ul li");
@@ -131,7 +126,6 @@ function DeskTopManu() {
 }
 
 // Mobile Divice Manu click animation
-
 function DropDownAnimaton() {
   var ResponsiveButton = document.querySelector(
     ".hero nav .nav_manu #Responsive_Button"
@@ -180,14 +174,27 @@ function DropDownAnimaton() {
 
   ResponsiveButton.addEventListener("click", function () {
     tl2.play();
+    // Drop.style.overflow = "hidden"
+
+    document.querySelector(".work").style.display = "none";
+    document.querySelector(".marquee").style.display = "none";
+    document.querySelector(".about").style.display = "none";
+    document.querySelector(".subscribe").style.display = "none";
+    document.querySelector(".footerSection").style.display = "none";
   });
+
   DropDownNav.addEventListener("click", function () {
     tl2.reverse();
+
+    document.querySelector(".work").style.display = "inline-block";
+    document.querySelector(".marquee").style.display = "inline-block";
+    document.querySelector(".about").style.display = "inline-block";
+    document.querySelector(".subscribe").style.display = "inline-block";
+    document.querySelector(".footerSection").style.display = "inline-block";
   });
 }
 
 // Hero Section Restart animation
-
 function HeroAnimation() {
   var tl3 = gsap.timeline();
 
@@ -201,7 +208,6 @@ function HeroAnimation() {
     {
       y: 200,
       duration: 0.5,
-      
     },
     "same"
   );
@@ -210,7 +216,6 @@ function HeroAnimation() {
     {
       y: 200,
       duration: 0.5,
-      
     },
     "same"
   );
@@ -236,47 +241,45 @@ function HeroAnimation() {
 }
 
 //Elem Section Mouse Move Animation
-
-function ElemSection(){
-  document.querySelectorAll(".elem").forEach(function(elem){
+function ElemSection() {
+  document.querySelectorAll(".elem").forEach(function (elem) {
     var rotate = 0;
     var deffrot = 0;
-  
-    elem.addEventListener("mousemove", function(dets){
+
+    elem.addEventListener("mousemove", function (dets) {
       var deff = dets.clientY - elem.getBoundingClientRect().top;
-  
+
       deffrot = dets.clientX - rotate;
       rotate = dets.clientX;
-  
+
       gsap.to(elem.querySelector(".imgBox"), {
         opacity: 1,
         ease: Power3,
         top: deff,
         left: dets.clientX,
-        rotate: gsap.utils.clamp(-20, 20, deffrot * 0.5)
+        rotate: gsap.utils.clamp(-20, 20, deffrot * 0.5),
       });
     });
-  
-    elem.addEventListener("mouseleave", function(){
+
+    elem.addEventListener("mouseleave", function () {
       gsap.to(elem.querySelector(".imgBox"), {
         opacity: 0,
-        ease: Power3, 
-        rotate: gsap.utils.clamp(0, 0, deffrot * 0.5)
+        ease: Power3,
+        rotate: gsap.utils.clamp(0, 0, deffrot * 0.5),
       });
     });
-  
+
     // Mouseenter ইভেন্ট: h1 সরবে
-    elem.addEventListener("mouseenter", function(){
+    elem.addEventListener("mouseenter", function () {
       gsap.to(elem.querySelector("h1"), {
         marginLeft: "30px",
         duration: 0.2,
         opacity: 0.2,
-  
-          });
+      });
     });
-  
+
     // Mouseleave ইভেন্ট: h1 আগের অবস্থানে ফিরে যাবে
-    elem.addEventListener("mouseleave", function(){
+    elem.addEventListener("mouseleave", function () {
       gsap.to(elem.querySelector("h1"), {
         marginLeft: "0px",
         duration: 0.3,
@@ -284,42 +287,58 @@ function ElemSection(){
       });
     });
   });
-  
 }
 
+//Elem Section ScrollerAnimation
+// function ElemScrollTrigger(){
+//   var tl5 = gsap.timeline({
+//     scrollTrigger:{
+//         trigger:".workContainer",
+//         scroller:"#mainContainer",
+//         start:"top 60%",
+//         end:"top 50%",
+//         scrub:2,
+//         // markers:true
+//     }
+//   })
+
+//   tl5.from(".elem",{
+//     y:100,
+//     opacity:0,
+//     duration:1
+//   })
+
+// }
 
 DeskTopManu();
 DropDownAnimaton();
 HeroAnimation();
-ElemSection()
+ElemSection();
+// ElemScrollTrigger();
 
 
 
+//Bangadesh Live Time
 
+let bdTimeArray = []; // BD Time সংরক্ষণের জন্য অ্যারে
 
-
-
-
-
-
-
-
-
-//Bangadesh Live Time 
 function updateBDTime() {
   var now = new Date();
 
-  var options = {
+  var bdTime = now.toLocaleTimeString("en-US", {
     timeZone: "Asia/Dhaka",
     hour: "2-digit",
     minute: "2-digit",
-    hour12: true,
-  };
+    hour12: true, // 12-hour format
+  });
 
-  var bdTime = now.toLocaleTimeString("en-US", options);
+  // অ্যারেতে টাইম সংরক্ষণ করা হচ্ছে
+  bdTimeArray = [bdTime + " BD"];
 
-  document.getElementById("bdTime").innerHTML = bdTime + " BD";
+  // ওয়েবসাইটে একাধিক স্থানে আপডেট
+  document.getElementById("bdTime1").innerHTML = bdTimeArray[0];
+  document.getElementById("bdTime2").innerHTML = bdTimeArray[0];
 }
-setInterval(updateBDTime, 1000);
-updateBDTime();
 
+setInterval(updateBDTime, 60000); // প্রতি 60 সেকেন্ডে আপডেট হবে
+updateBDTime();
